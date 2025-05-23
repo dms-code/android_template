@@ -32,17 +32,18 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-import androidx.hilt.navigation.compose.hiltViewModel
-
 @Composable
-fun GreetingFromViewModel(viewModel: ExampleViewModel = hiltViewModel()) {
-    Text(text = viewModel.message)
+fun Greeting(name: String, modifier: Modifier = Modifier) {
+    Text(
+        text = "Hello $name!",
+        modifier = modifier
+    )
 }
 
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
     MyApplicationTheme {
-        GreetingFromViewModel()
+        Greeting("Android")
     }
 }
